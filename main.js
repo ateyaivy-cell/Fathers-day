@@ -4,7 +4,10 @@ const messageContent = document.getElementById('message-content');
 // Vibrant neon/festive colors for the fireworks and balloons
 const partyColors = [ 'red', 'blue', 'green', 'purple', 'orange'];
 
-giftContainer.addEventListener('pointerdown', openGift);
+giftContainer.addEventListener('touchstart', (e) => {
+    e.preventDefault(); 
+    openGift();
+}, { passive: false });
 
 function openGift() {
     // Animate and hide the gift container
